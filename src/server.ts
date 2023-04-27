@@ -12,12 +12,7 @@ const port = process.env.PORT || 8080;
 // Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(
-  cors({
-    origin: process.env.MAIN_URL || "http://localhost:3000",
-    credentials: true,
-  })
-);
+app.use(cors());
 
 // Controllers
 const jenosizeController = new JenosizeController();
