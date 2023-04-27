@@ -3,8 +3,8 @@ import axios from "axios";
 
 class JenosizeController {
   public async searchRestaurants(req: Request, res: Response): Promise<void> {
-    const { location = "bangkok", keyword = "food", radius = 3000 } = req.query;
-    const url = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${keyword}&location=${location}&radius=${radius}&type=restaurant&key=${process.env.GOOGLE_API_KEY}`;
+    const { region = "th", keyword = "food", radius = 3000 } = req.query;
+    const url = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${keyword}&region=${region}&radius=${radius}&type=restaurant&key=${process.env.GOOGLE_API_KEY}`;
 
     try {
       const response = await axios.get(url);
