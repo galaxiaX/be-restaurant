@@ -12,7 +12,11 @@ const port = process.env.PORT || 8080;
 // Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://placesearch.vercel.app",
+  })
+);
 
 // Controllers
 const jenosizeController = new JenosizeController();
