@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: "https://placesearch.vercel.app",
+    origin: process.env.MAIN_URL || "http://localhost:3000",
   })
 );
 
